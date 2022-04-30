@@ -7,6 +7,5 @@ The code has been tested running under Python 3.8.5. The required packages are a
 1. tensorly == 0.5.1
 2. numpy == 1.21.5
 3. pandas == 1.3.5
-# Notice
-Before running the code, you need to change the path of reading data in the code to the path suitable for your computer.
+
 
