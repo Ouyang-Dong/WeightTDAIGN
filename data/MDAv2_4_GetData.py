@@ -42,7 +42,6 @@ class MDAv2_4_GetData(object):
                         col = col + 1
                 row = row + 1
         disease_similarity_mat = np.mat(disease_similarity_mat)
-        disease_similarity_mat = disease_similarity_mat - np.diag(np.diag(disease_similarity_mat))
         return disease_similarity_mat, type_association_matrix
 
     def get_functional_sim(self, mir_dis_mat):
@@ -65,5 +64,4 @@ class MDAv2_4_GetData(object):
         mir_fun_sim_matrix = np.nan_to_num(mir_fun_sim_matrix)
         row, col = np.diag_indices(mir_fun_sim_matrix.shape[0])
         mir_fun_sim_matrix[row, col] = np.ones(mir_fun_sim_matrix.shape[0])
-        mir_fun_sim_matrix = mir_fun_sim_matrix - np.diag(np.diag(mir_fun_sim_matrix))
         return mir_fun_sim_matrix
