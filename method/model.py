@@ -110,7 +110,7 @@ class WeightTDAIGN_Model(object):
 
                 output_X_old = tl.fold(np.array(M * A.T), 0, X.shape)
 
-                new_X_1 = (np.multiply(W_1, X_1))
+                new_X_1 = np.multiply(W_1, X_1)
                 X_1_G = new_X_1 * A + alpha * U_1 * Q_1 + alpha * U_2 * Q_2 + alpha * U_3 * Q_3
 
                 for j in range(M.shape[0]):
@@ -120,7 +120,7 @@ class WeightTDAIGN_Model(object):
 
 
                 R = np.mat(tl.tenalg.khatri_rao([M, T]))
-                new_X_2 = (np.multiply(W_2, X_2))
+                new_X_2 = np.multiply(W_2, X_2)
                 X_2_R = new_X_2 * R + beta * V_1 * P_1 + beta * V_2 * P_2
                 for m in range(D.shape[0]):
                     W_2_sparse = scipy.sparse.diags(W_2[m, :])
